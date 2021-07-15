@@ -1,0 +1,15 @@
+sarp:
+  image: "sarp:latest"
+  ports:
+  - "5088:8388"
+  - "5088:8388/udp"
+  volumes:
+  - /etc/wireguard:/etc/wireguard
+  restart: always
+  container_name: sarp
+  environment:
+    key: Mitsuhaxy
+    method: chacha20-ietf-poly1305
+    dns: 1.1.1.1
+  cap_add: 
+  - NET_ADMIN
