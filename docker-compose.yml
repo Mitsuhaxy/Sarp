@@ -8,7 +8,7 @@ sarp:
   restart: always
   container_name: sarp
   environment:
-    key: Mitsuhaxy
+    key: "Mitsuhaxy"
     method: chacha20-ietf-poly1305
     dns: 1.1.1.1
   cap_add: 
