@@ -9,7 +9,7 @@ Shadowsocks-libev+Warp
 
 Build image:
 ```
-docker build -t sarp -< sarp.dockerfile
+docker build -t sarp .
 ```
 Running:
 ```
