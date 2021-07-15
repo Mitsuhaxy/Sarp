@@ -13,5 +13,5 @@ docker build -t sarp .
 ```
 Running:
 ```
-docker-compose -f sarp.yml up -d
+docker-compose up -d
 ```
