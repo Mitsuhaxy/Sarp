@@ -3,7 +3,7 @@ LABEL maintainer="sarp"
 
 COPY ./entrypoint.sh /entrypoint.sh
 RUN apt-get update \
-    && apt-get install iptables iproute2 shadowsocks-libev wireguard net-tools -y \
+    && apt-get install iptables iproute2 shadowsocks-libev wireguard net-tools openresolv -y \
     && chmod +x /entrypoint.sh
 
 EXPOSE 8388
