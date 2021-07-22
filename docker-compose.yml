@@ -1,15 +1,19 @@
-sarp:
-  image: "sarp:latest"
-  ports:
-  - "5088:8388"
-  - "5088:8388/udp"
-  volumes:
-  - /etc/wireguard:/etc/wireguard
-  restart: always
-  container_name: sarp
-  environment:
-    key: "Mitsuhaxy"
-    method: "chacha20-ietf-poly1305"
-    dns: "1.1.1.1"
-  cap_add: 
-  - NET_ADMIN
+version: "2.2"
+services:
+  sarp:
+    image: "sarp:latest"
+    ports:
+      - "5088:8388"
+      - "5088:8388/udp"
+    volumes:
+      - /etc/wireguard:/etc/wireguard
+    restart: always
+    container_name: sarp
+    environment:
+      key: "Mitsuhaxy"
+      method: "chacha20-ietf-poly1305"
+      dns: "1.1.1.1"
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      - net.ipv6.conf.default.disable_ipv6=0
