@@ -2,12 +2,11 @@
 
 set -e
 ifaddress=$(ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:")
-if6address=$(ifconfig -a|grep inet6|grep -v ::1|awk '{print $2}')
 ifgateway=$(ip route | grep 'default' | awk '{print $3}')
-cp /etc/wireguard/wgcf.conf /wgcf.conf
-sed -i '/MTU = 1280/a\Table = off'  /wgcf.conf
+cp /etc/wireguard/wgcf.conf /etc/wireguard/sarp.conf
+sed -i '/MTU = 1280/a\Table = off'  /etc/wireguard/sarp.conf
 ip route add 162.159.192.1 via $ifgateway
-wg-quick up /wgcf.conf
+wg-quick up /etc/wireguard/sarp.conf
 echo "252     eth0" >> /etc/iproute2/rt_tables
 ip rule add from $ifaddress lookup eth0
 ip route del default
