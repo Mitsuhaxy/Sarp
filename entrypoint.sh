@@ -12,7 +12,7 @@ fi
 cp /etc/wireguard/wgcf.conf /var/etc/wireguard/wgcf.conf
 sed -i '/MTU = 1280/a\Table = off'  /var/etc/wireguard/wgcf.conf
 ip route add 162.159.192.1 via $ifgateway
-wg-quick up /etc/wireguard/wgcf.conf
+wg-quick up /var/etc/wireguard/wgcf.conf
 if [ `grep -c "252     eth0" /etc/iproute2/rt_tables` -ne '0' ]; then
   echo "252     eth0" >> /etc/iproute2/rt_tables
 fi
