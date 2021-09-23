@@ -3,7 +3,7 @@ LABEL maintainer="sarp"
 
 COPY ./entrypoint.sh /entrypoint.sh
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && apk update \
-    && apk add -y iptables iproute2 shadowsocks-libev wireguard-tools net-tools openresolv \
+    && apk add --no-cache iptables iproute2 shadowsocks-libev wireguard-tools net-tools openresolv \
     && chmod +x /entrypoint.sh
 
 EXPOSE 8388
