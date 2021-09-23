@@ -1,7 +1,7 @@
 version: "2.2"
 services:
   sarp:
-    image: "sarp:latest"
+    image: "sarp:alpine"
     ports:
       - "5088:8388"
       - "5088:8388/udp"
