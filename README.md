@@ -5,7 +5,7 @@
 ```
 git clone -b base-alpine https://github.com/Mitsuhaxy/Sarp.git
 cd ./Sarp
-docker build -t sarp .
+docker build -t sarp:alpine .
 ```
   
 2.Put ```wgcf.conf``` to ```/etc/wireguard/``` .
