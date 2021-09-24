@@ -9,8 +9,8 @@ fi
 if [ ! -d "/var/etc/wireguard" ]; then
   mkdir /var/etc/wireguard
 fi
-if [ `grep -c "engage.cloudflareclient.com 162.159.192.1" /etc/hosts` == '0' ]; then
-  echo "engage.cloudflareclient.com 162.159.192.1" >> /etc/hosts
+if [ `grep -c "162.159.192.1 engage.cloudflareclient.com" /etc/hosts` == '0' ]; then
+  echo "162.159.192.1 engage.cloudflareclient.com" >> /etc/hosts
 fi
 ip route add 162.159.192.1 via 172.20.0.1 dev eth0
 cp /etc/wireguard/wgcf.conf /var/etc/wireguard/wgcf.conf
