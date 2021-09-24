@@ -12,7 +12,7 @@ fi
 if [ `grep -c "162.159.192.1 engage.cloudflareclient.com" /etc/hosts` == '0' ]; then
   echo "162.159.192.1 engage.cloudflareclient.com" >> /etc/hosts
 fi
-ip route add 162.159.192.1 via 172.20.0.1 dev eth0
+ip route add 162.159.192.1 via $ifgateway dev eth0
 cp /etc/wireguard/wgcf.conf /var/etc/wireguard/wgcf.conf
 sed -i '/MTU = 1280/a\Table = off'  /var/etc/wireguard/wgcf.conf
 wg-quick up /var/etc/wireguard/wgcf.conf
