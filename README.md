@@ -1,4 +1,5 @@
 *Shadowsocks-libev+Warp(Base-Alpine)*  
+Host need 5.4+ kernel  
   
 # How to use:
 1.Build image:
